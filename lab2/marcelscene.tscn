@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://drac82xrevv14"]
+
+[ext_resource type="Texture2D" uid="uid://b2hxmfrwquhwi" path="res://Images/4-clipart-sun-1.png" id="1_cfapc"]
+[ext_resource type="Texture2D" uid="uid://cvpbje203hm7s" path="res://Images/pngtree-soft-2d-cloud-png-image_13980627.png" id="2_524l4"]
+
+[node name="SUN" type="Sprite2D"]
+position = Vector2(111.438, 119.233)
+scale = Vector2(0.0949872, 0.0949872)
+texture = ExtResource("1_cfapc")
+
+[node name="cloud1" type="Sprite2D" parent="."]
+position = Vector2(2532.58, 881.88)
+scale = Vector2(4, 4)
+texture = ExtResource("2_524l4")
+
+[node name="cloud2" type="Sprite2D" parent="."]
+position = Vector2(4006.46, -581.475)
+scale = Vector2(4, 4)
+texture = ExtResource("2_524l4")
+
+[node name="cloud3" type="Sprite2D" parent="."]
+position = Vector2(7143.72, -528.837)
+scale = Vector2(4, 4)
+texture = ExtResource("2_524l4")
+
+[node name="cloud4" type="Sprite2D" parent="."]
+position = Vector2(8101.75, 776.602)
+scale = Vector2(4, 4)
+texture = ExtResource("2_524l4")
+
+[node name="cloud5" type="Sprite2D" parent="."]
+position = Vector2(5438.23, 1081.91)
+scale = Vector2(4, 4)
+texture = ExtResource("2_524l4")
+
+[node name="cloud6" type="Sprite2D" parent="."]
+position = Vector2(9712.49, -413.031)
+scale = Vector2(4, 4)
+texture = ExtResource("2_524l4")
