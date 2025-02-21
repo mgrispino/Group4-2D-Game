@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://by6y41ot5epjo"]
+
+[ext_resource type="Texture2D" uid="uid://dg8kxd76rgn64" path="res://Images/Mountain.png" id="1_q1hor"]
+[ext_resource type="Texture2D" uid="uid://cxbr16rmw2kvf" path="res://Images/lake.webp" id="2_px4pt"]
+
+[node name="MOUNTAIN" type="Sprite2D"]
+
+[node name="MountainPngClipArtImage" type="Sprite2D" parent="."]
+position = Vector2(-1.99997, -0.999985)
+scale = Vector2(0.186125, 0.225793)
+texture = ExtResource("1_q1hor")
+
+[node name="Mountain2" type="Sprite2D" parent="MountainPngClipArtImage"]
+position = Vector2(5644.22, 550.274)
+scale = Vector2(0.637299, 0.68454)
+texture = ExtResource("1_q1hor")
+
+[node name="Mountain" type="Sprite2D" parent="MountainPngClipArtImage"]
+position = Vector2(2675.62, 801.619)
+scale = Vector2(0.664876, 0.556623)
+texture = ExtResource("1_q1hor")
+
+[node name="Lake" type="Sprite2D" parent="MountainPngClipArtImage"]
+position = Vector2(2127.6, 1935.4)
+scale = Vector2(18.0843, 4.87919)
+texture = ExtResource("2_px4pt")
