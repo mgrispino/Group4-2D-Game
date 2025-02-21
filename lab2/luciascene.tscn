@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c437s068humaa"]
+
+[ext_resource type="Texture2D" uid="uid://ctxg1fqdj7mpg" path="res://hello kitty. .webp" id="1_j458a"]
+
+[node name="HelloKitty_" type="Sprite2D"]
+position = Vector2(350, 346)
+texture = ExtResource("1_j458a")
