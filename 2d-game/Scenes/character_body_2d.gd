@@ -55,6 +55,7 @@ func _physics_process(delta):
 		in_air = true
 		if jumping:
 			sprite.play("Jump")
+			jumping = false
 		elif (gravity_direction == 1 and velocity.y > 0) or (gravity_direction == -1 and velocity.y < 0):
 			sprite.play("Fall")
 	elif moving:
