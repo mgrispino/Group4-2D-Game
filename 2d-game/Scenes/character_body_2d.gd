@@ -1,33 +1,66 @@
 extends CharacterBody2D
 
-@export var speed = 5
-var jump = false
+@export var speed = 500
+@export var jump_force = 400
+@export var gravity = 600 
+
+var gravity_direction = 1
+# 1 = normal grav, 0 = flipped gravity
+var in_air = false
+# Tracking if the character is floating in air
+var jumping = false
+# Tracks character jumping
+
 @onready var sprite = $AnimatedSprite2D
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
+func _physics_process(delta):
+	# GRAVITY
+	velocity.y += gravity * gravity_direction * delta
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+	var moving = false
+	var on_ground = is_on_floor() if gravity_direction == 1 else is_on_ceiling()
+
+	if in_air and on_ground:
+		sprite.play("Land")
+		in_air = false
+		jumping = false
+	
+	# RIGHT/LEFT
 	if Input.is_action_pressed("Move_Right"):
-		position.x =+ speed
-		sprite.play("Walk")
+		velocity.x = speed
 		sprite.flip_h = false
+		moving = true
 	elif Input.is_action_pressed("Move_Left"):
-		position.x -= speed
-		sprite.play("Walk")
+		velocity.x = -speed
 		sprite.flip_h = true
-	elif Input.is_action_pressed("Jump") or jump:
+		moving = true
+	else:
+		velocity.x = 0
+
+	# JUMPING
+	if Input.is_action_just_pressed("Jump") and on_ground:
+		velocity.y = -jump_force * gravity_direction  # Reversing the Jump Force
 		sprite.play("Jump")
-		jump = true
+		in_air = true
+		jumping = true
+
+	# FLIPPING GRAVITY
+	if Input.is_action_just_pressed("Flip"):
+		gravity_direction *= -1  # Inverting gravity
+		sprite.flip_v = not sprite.flip_v  # Flipping the sprite upsidedown
+		in_air = true
+		jumping = false
+	
+	if not on_ground:
+		in_air = true
+		if jumping:
+			sprite.play("Jump")
+		elif (gravity_direction == 1 and velocity.y > 0) or (gravity_direction == -1 and velocity.y < 0):
+			sprite.play("Fall")
+	elif moving:
+		sprite.play("Walk")
 	else:
 		sprite.play("Idle")
-	
-	pass
 
 
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if sprite.animation == "Jump":
-		jump = false
-	pass # Replace with function body.
+	move_and_slide()
