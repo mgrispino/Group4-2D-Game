@@ -1,16 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce2oqevm87w8h"]
+[gd_scene load_steps=6 format=3 uid="uid://ce2oqevm87w8h"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_fni7m"]
 [ext_resource type="Texture2D" uid="uid://27r1kmqiq2ql" path="res://Assets/MenuBackground/Assets/Blue Version/blue-preview.png" id="2_r3y7g"]
 [ext_resource type="FontFile" uid="uid://cronpsjejfwr1" path="res://Assets/Fonts/static/Quicksand-Medium.ttf" id="3_xwwpj"]
-[ext_resource type="Texture2D" uid="uid://caelnw4ktw08v" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Start Button.png" id="4_an86u"]
-[ext_resource type="Texture2D" uid="uid://bvs11esehjk2n" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Controls Button.png" id="5_hyrlu"]
+[ext_resource type="Theme" uid="uid://bqdn1hl5c7fvl" path="res://Assets/space-worm-theme/space_worm_theme.tres" id="4_snatl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qs7m6"]
 font = ExtResource("3_xwwpj")
-font_size = 128
+font_size = 93
 
-[node name="Control" type="Control"]
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,35 +29,57 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_r3y7g")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 1.0
-offset_right = 1151.0
-offset_bottom = 643.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.005
+anchor_right = 0.994
+anchor_bottom = 0.989
+offset_left = -9.52
+offset_top = -0.24
+offset_right = -568.088
+offset_bottom = -314.872
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Off Course
 "
 label_settings = SubResource("LabelSettings_qs7m6")
 horizontal_alignment = 1
 
-[node name="Start" type="TextureButton" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("4_an86u")
-stretch_mode = 3
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.308
+anchor_top = 1.085
+anchor_right = 0.664
+anchor_bottom = 1.923
+offset_left = -0.100021
+offset_top = 0.0549927
+offset_right = 0.199982
+offset_bottom = 0.00898743
 
-[node name="Tutorial" type="TextureButton" parent="PanelContainer/VBoxContainer"]
+[node name="Start" type="Button" parent="VBoxContainer/Label/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("5_hyrlu")
+focus_neighbor_top = NodePath("../Quit")
+theme = ExtResource("4_snatl")
+text = "Start"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[node name="Tutorial" type="Button" parent="VBoxContainer/Label/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_snatl")
+text = "Tutorial"
+
+[node name="Quit" type="Button" parent="VBoxContainer/Label/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Start")
+theme = ExtResource("4_snatl")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Label/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Label/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
