@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_fni7m"]
 [ext_resource type="Texture2D" uid="uid://27r1kmqiq2ql" path="res://Assets/MenuBackground/Assets/Blue Version/blue-preview.png" id="2_r3y7g"]
-[ext_resource type="FontFile" uid="uid://cronpsjejfwr1" path="res://Assets/Fonts/static/Quicksand-Medium.ttf" id="3_xwwpj"]
+[ext_resource type="FontFile" uid="uid://dkqwunfjhx6d7" path="res://Assets/font/monogram.ttf" id="3_w25yw"]
 [ext_resource type="Theme" uid="uid://bqdn1hl5c7fvl" path="res://Assets/space-worm-theme/space_worm_theme.tres" id="4_snatl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qs7m6"]
-font = ExtResource("3_xwwpj")
+font = ExtResource("3_w25yw")
 font_size = 93
 
 [node name="Menu" type="Control"]
