@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ce2oqevm87w8h"]
+[gd_scene load_steps=7 format=3 uid="uid://ce2oqevm87w8h"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_fni7m"]
 [ext_resource type="Texture2D" uid="uid://27r1kmqiq2ql" path="res://Assets/MenuBackground/Assets/Blue Version/blue-preview.png" id="2_r3y7g"]
 [ext_resource type="FontFile" uid="uid://dkqwunfjhx6d7" path="res://Assets/font/monogram.ttf" id="3_w25yw"]
 [ext_resource type="Theme" uid="uid://bqdn1hl5c7fvl" path="res://Assets/space-worm-theme/space_worm_theme.tres" id="4_snatl"]
+[ext_resource type="PackedScene" uid="uid://cq7gp0lbij2ck" path="res://Scenes/Music.tscn" id="5_mvlqb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qs7m6"]
 font = ExtResource("3_w25yw")
@@ -86,6 +87,8 @@ size_flags_vertical = 6
 focus_neighbor_bottom = NodePath("../Start")
 theme = ExtResource("4_snatl")
 text = "Quit"
+
+[node name="Music" parent="." instance=ExtResource("5_mvlqb")]
 
 [connection signal="pressed" from="VBoxContainer/Label/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Label/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
