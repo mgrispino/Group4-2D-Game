@@ -1,0 +1,203 @@
+[gd_scene load_steps=10 format=3 uid="uid://bic6mhlnije13"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_86vl3"]
+[ext_resource type="Texture2D" uid="uid://27r1kmqiq2ql" path="res://Assets/MenuBackground/Assets/Blue Version/blue-preview.png" id="1_wyn41"]
+[ext_resource type="Theme" uid="uid://bqdn1hl5c7fvl" path="res://Assets/space-worm-theme/space_worm_theme.tres" id="2_w8sj5"]
+[ext_resource type="Texture2D" uid="uid://xse4isxonemd" path="res://Assets/ButtonUI/Keyboard Letters and Symbols.png" id="3_jquqf"]
+[ext_resource type="Texture2D" uid="uid://dlm4wcx5lj3dj" path="res://Assets/ButtonUI/Keyboard Letters and Symbols copy 4.png" id="4_q7uq4"]
+[ext_resource type="Texture2D" uid="uid://qsloqu6pahlq" path="res://Assets/ButtonUI/Keyboard Letters and Symbols copy.png" id="5_36wkm"]
+[ext_resource type="Texture2D" uid="uid://74occrasgvlt" path="res://Assets/ButtonUI/Keyboard Letters and Symbols copy 3.png" id="7_0sv6g"]
+[ext_resource type="Texture2D" uid="uid://c0fhq4c6vlmdm" path="res://Assets/ButtonUI/Keyboard Letters and Symbols copy 5.png" id="7_f68b5"]
+[ext_resource type="Texture2D" uid="uid://gq0vc2j2yrvn" path="res://Assets/ButtonUI/Keyboard Letters and Symbols copy 2.png" id="8_1y03t"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_86vl3")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wyn41")
+
+[node name="Left" type="TextureRect" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.139
+anchor_top = 0.296
+anchor_right = 0.174
+anchor_bottom = 0.355
+offset_left = -0.128021
+offset_top = 0.192001
+offset_right = -0.448013
+offset_bottom = 1.95999
+texture = ExtResource("3_jquqf")
+
+[node name="A" type="TextureRect" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.201
+anchor_top = 0.296
+anchor_right = 0.236
+anchor_bottom = 0.358
+offset_left = -0.552002
+offset_top = 0.192001
+offset_right = 0.127991
+offset_bottom = 0.0159912
+texture = ExtResource("4_q7uq4")
+
+[node name="Right" type="TextureRect" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.299
+anchor_right = 0.377
+anchor_bottom = 0.355
+offset_left = 0.0159912
+offset_top = 0.247986
+offset_right = -0.304016
+offset_bottom = 3.95999
+texture = ExtResource("5_36wkm")
+
+[node name="D" type="TextureRect" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41
+anchor_top = 0.301
+anchor_right = 0.444
+anchor_bottom = 0.358
+offset_left = -0.320038
+offset_top = -0.0480194
+offset_right = 0.511963
+offset_bottom = 1.01599
+texture = ExtResource("7_f68b5")
+
+[node name="Up" type="TextureRect" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.545
+anchor_top = 0.29
+anchor_right = 0.582
+anchor_bottom = 0.352
+offset_left = -1.84003
+offset_top = 0.0799866
+offset_right = -0.463989
+offset_bottom = 2.90398
+texture = ExtResource("7_0sv6g")
+
+[node name="F" type="TextureRect" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.716
+anchor_top = 0.295
+anchor_right = 0.751
+anchor_bottom = 0.356
+offset_left = 0.167969
+offset_top = -0.160004
+offset_right = -0.152039
+offset_bottom = 0.311996
+texture = ExtResource("8_1y03t")
+
+[node name="MoveLeft" type="Label" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.135
+anchor_top = 0.38
+anchor_right = 0.24
+anchor_bottom = 0.42
+offset_left = -0.520004
+offset_top = -0.240021
+offset_right = 6.51999
+offset_bottom = -0.160004
+theme = ExtResource("2_w8sj5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Move Left"
+
+[node name="MoveRight" type="Label" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.276
+anchor_top = 0.373
+anchor_right = 0.398
+anchor_bottom = 0.421
+offset_left = 69.048
+offset_top = 4.29599
+offset_right = 68.504
+offset_bottom = 0.191986
+theme = ExtResource("2_w8sj5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Move Right"
+
+[node name="Jump" type="Label" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.539
+anchor_top = 0.375
+anchor_right = 0.591
+anchor_bottom = 0.417
+offset_left = 0.0719604
+offset_top = -1.52588e-05
+offset_right = 0.167969
+offset_bottom = -1.216
+theme = ExtResource("2_w8sj5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Jump
+"
+
+[node name="Flip Gravity" type="Label" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.673
+anchor_top = 0.377
+anchor_right = 0.819
+anchor_bottom = 0.417
+offset_left = -0.296021
+offset_top = -0.296005
+offset_right = -0.488098
+offset_bottom = -0.216003
+theme = ExtResource("2_w8sj5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Flip Gravity"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021
+anchor_top = 0.847
+anchor_right = 0.162
+anchor_bottom = 0.952
+offset_left = -0.192001
+offset_top = 0.143982
+offset_right = 0.376007
+offset_bottom = 0.104004
+grow_vertical = 0
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_w8sj5")
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

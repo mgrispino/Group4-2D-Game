@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bb1b5jei2q61i" path="res://Assets/Spaceman/Astronaut-Sheet.png" id="2_crtib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eyf4f"]
-size = Vector2(76, 83)
+size = Vector2(76, 74)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ti83p"]
 atlas = ExtResource("2_crtib")
@@ -211,7 +211,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Jump",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -220,7 +220,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hmt4c")
 }],
-"loop": true,
+"loop": false,
 "name": &"Land",
 "speed": 2.0
 }, {
@@ -283,8 +283,8 @@ shape = SubResource("RectangleShape2D_eyf4f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(1.5, -26.5)
-scale = Vector2(8.3125, 8.3125)
+position = Vector2(-0.75, -0.75)
+scale = Vector2(4.71875, 4.65625)
 sprite_frames = SubResource("SpriteFrames_y057l")
 animation = &"Idle"
 autoplay = "Idle"
@@ -292,3 +292,5 @@ autoplay = "Idle"
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(2, 1)
 scale = Vector2(8.25, 8.25)
+
+[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
