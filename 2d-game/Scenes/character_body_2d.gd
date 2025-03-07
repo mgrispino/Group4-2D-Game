@@ -54,6 +54,10 @@ func _physics_process(delta):
 		in_air = true
 		jumping = false
 	
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+		
+	
 	if not on_ground:
 		in_air = true
 		if jumping:

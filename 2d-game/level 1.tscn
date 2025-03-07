@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://kpvesph6cxe1" path="res://Assets/FreeSciFiPlatform/png/Tiles/BGTile (1).png" id="5_bcp32"]
 [ext_resource type="Texture2D" uid="uid://7ti1oc81id24" path="res://Assets/FreeSciFiPlatform/vector/Tile.svg" id="6_x1qlf"]
 [ext_resource type="PackedScene" uid="uid://bd06ewbxwrgwn" path="res://Obstacles/spikes.tscn" id="7_2ncd8"]
-[ext_resource type="PackedScene" uid="uid://ddsk787544mr5" path="res://Scenes/Level2Character.tscn" id="8_jexb3"]
+[ext_resource type="PackedScene" uid="uid://c8ok753pfi8h8" path="res://Scenes/2DCharacter.tscn" id="8_apbva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqqox"]
 texture = ExtResource("1_xrhr8")
@@ -1774,6 +1774,5 @@ scale = Vector2(0.55, 0.8)
 position = Vector2(460, 343)
 scale = Vector2(0.55, 0.8)
 
-[node name="Node2D" parent="." instance=ExtResource("8_jexb3")]
-position = Vector2(66, 327)
-scale = Vector2(0.5, 0.5)
+[node name="Spaceman" parent="." instance=ExtResource("8_apbva")]
+position = Vector2(63, 325)
