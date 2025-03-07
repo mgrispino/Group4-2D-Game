@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 300
 @export var jump_force = 300
-@export var gravity = 600 
+@export var gravity = 600
+
+var start_position: Vector2
 
 var gravity_direction = 1
 # 1 = normal grav, 0 = flipped gravity
@@ -41,8 +43,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Jump") and on_ground:
 		velocity.y = -jump_force * gravity_direction  # Reversing the Jump Force
 		sprite.play("Jump")
-		in_air = true
 		jumping = true
+		in_air = true
+
 
 	# FLIPPING GRAVITY
 	if Input.is_action_just_pressed("Flip"):
@@ -65,8 +68,6 @@ func _physics_process(delta):
 
 
 	move_and_slide()
-
-var start_position: Vector2
 
 func _ready():
 	var respawn_point = get_node_or_null("../Spawn")
