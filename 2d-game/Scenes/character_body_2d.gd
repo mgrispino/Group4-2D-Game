@@ -69,8 +69,7 @@ func _physics_process(delta):
 		sprite.play("Walk")
 	else:
 		sprite.play("Idle")
-
-
+		
 	move_and_slide()
 
 func _ready():
