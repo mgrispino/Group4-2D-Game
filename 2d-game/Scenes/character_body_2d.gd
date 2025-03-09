@@ -79,3 +79,4 @@ func _ready():
 func respawn():
 	global_position = start_position
 	velocity = Vector2.ZERO
+	gravity_direction=1

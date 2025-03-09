@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://c4h81f2i8tm30"]
 
-[ext_resource type="Texture2D" uid="uid://c4ctgqovnoofk" path="res://Assets/2D Pixel Spacecraft Tileset/Tileset/tileset.png" id="1_ng5bj"]
-[ext_resource type="Texture2D" uid="uid://c6codkmlbdi0t" path="res://Assets/2D Pixel Spacecraft Tileset/Tileset/Spaceship2.png" id="2_wskqp"]
+[ext_resource type="Texture2D" uid="uid://c4ctgqovnoofk" path="res://Assets/2D Pixel Spacecraft Tileset/Tileset/tileset.png" id="1_kfnh0"]
+[ext_resource type="Texture2D" uid="uid://c6codkmlbdi0t" path="res://Assets/2D Pixel Spacecraft Tileset/Tileset/Spaceship2.png" id="2_ct5us"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s0247"]
-texture = ExtResource("1_ng5bj")
+texture = ExtResource("1_kfnh0")
 0:1/0 = 0
 2:1/0 = 0
 4:1/0 = 0
@@ -564,7 +564,7 @@ texture = ExtResource("1_ng5bj")
 sources/0 = SubResource("TileSetAtlasSource_s0247")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4wm6"]
-texture = ExtResource("2_wskqp")
+texture = ExtResource("2_ct5us")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
