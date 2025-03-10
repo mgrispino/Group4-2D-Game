@@ -69,8 +69,7 @@ func _physics_process(delta):
 		sprite.play("Walk")
 	else:
 		sprite.play("Idle")
-
-
+		
 	move_and_slide()
 
 func _ready():
@@ -83,3 +82,6 @@ func _ready():
 func respawn():
 	global_position = start_position
 	velocity = Vector2.ZERO
+	gravity_direction = 1
+	sprite.flip_v = false  
+	rotation_degrees = 0
