@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://kpvesph6cxe1" path="res://Assets/FreeSciFiPlatform/png/Tiles/BGTile (1).png" id="5_ht6yc"]
 [ext_resource type="Texture2D" uid="uid://7ti1oc81id24" path="res://Assets/FreeSciFiPlatform/vector/Tile.svg" id="6_yfjdm"]
 [ext_resource type="PackedScene" uid="uid://bd06ewbxwrgwn" path="res://Obstacles/spikes.tscn" id="7_aso2g"]
-[ext_resource type="PackedScene" uid="uid://ddsk787544mr5" path="res://Scenes/Level2Character.tscn" id="8_k7vfo"]
+[ext_resource type="PackedScene" uid="uid://c8ok753pfi8h8" path="res://Scenes/2DCharacter.tscn" id="8_tpu2n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqqox"]
 texture = ExtResource("1_qgu67")
@@ -1774,6 +1774,5 @@ scale = Vector2(0.55, 0.8)
 position = Vector2(460, 343)
 scale = Vector2(0.55, 0.8)
 
-[node name="Node2D" parent="." instance=ExtResource("8_k7vfo")]
-position = Vector2(66, 327)
-scale = Vector2(0.5, 0.5)
+[node name="Node2D" parent="." instance=ExtResource("8_tpu2n")]
+position = Vector2(69, 326)
