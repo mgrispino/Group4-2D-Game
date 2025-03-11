@@ -71,6 +71,7 @@ func _physics_process(delta):
 		sprite.play("Idle")
 		
 	move_and_slide()
+	
 
 func _ready():
 	var respawn_point = get_node_or_null("../Spawn")

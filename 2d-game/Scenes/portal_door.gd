@@ -5,4 +5,4 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "CharacterBody2D":  
-		body.respawn()  
+		get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
