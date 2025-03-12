@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://wwgwgf7anyqj"]
+[gd_scene load_steps=13 format=4 uid="uid://wwgwgf7anyqj"]
 
 [ext_resource type="Texture2D" uid="uid://c4ctgqovnoofk" path="res://Assets/2D Pixel Spacecraft Tileset/Tileset/tileset.png" id="1_qvr86"]
 [ext_resource type="PackedScene" uid="uid://bd06ewbxwrgwn" path="res://Obstacles/spikes.tscn" id="2_oy5jw"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bt83q2rn274qf" path="res://Assets/FreeSciFiPlatform/png/Objects/DoorOpen.png" id="4_i2qco"]
 [ext_resource type="PackedScene" uid="uid://c8ok753pfi8h8" path="res://Scenes/2DCharacter.tscn" id="4_jayxl"]
 [ext_resource type="Texture2D" uid="uid://27r1kmqiq2ql" path="res://Assets/MenuBackground/Assets/Blue Version/blue-preview.png" id="5_c7hn6"]
+[ext_resource type="Texture2D" uid="uid://3bl0m6ej1ewm" path="res://Assets/FreeSciFiPlatform/png/Objects/DoorLocked.png" id="5_h2uxm"]
+[ext_resource type="Script" path="res://Scenes/door_open_2.gd" id="6_xurk2"]
+[ext_resource type="PackedScene" uid="uid://cnh8whbk4e87u" path="res://Scenes/keycard.tscn" id="8_4n1ev"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0wgn"]
 texture = ExtResource("1_qvr86")
@@ -824,6 +827,9 @@ texture = ExtResource("1_qvr86")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_r0wgn")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3tga"]
+size = Vector2(265, 445)
+
 [node name="Level2" type="Node2D"]
 position = Vector2(1, 0)
 
@@ -1063,22 +1069,44 @@ position = Vector2(114.662, 0.000488281)
 [node name="Spike8" parent="Obstacles/Spike9" instance=ExtResource("2_oy5jw")]
 position = Vector2(-114.662, -0.000610352)
 
-[node name="DoorOpen" type="Sprite2D" parent="."]
+[node name="StartDoor" type="Sprite2D" parent="."]
 position = Vector2(-143, 210)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_i2qco")
 
-[node name="DoorOpen2" type="Sprite2D" parent="."]
+[node name="DoorLocked" type="Sprite2D" parent="."]
+position = Vector2(2246.5, 578.457)
+scale = Vector2(0.203572, 0.203572)
+texture = ExtResource("5_h2uxm")
+
+[node name="EndDoor" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(2245, 579)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_i2qco")
+script = ExtResource("6_xurk2")
 
-[node name="Node2D" parent="." instance=ExtResource("4_jayxl")]
-position = Vector2(-142, 202)
-scale = Vector2(0.6, 0.6)
+[node name="Area2D" type="Area2D" parent="EndDoor"]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndDoor/Area2D"]
+position = Vector2(2.5, -7.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_h3tga")
 
 [node name="Blue-preview" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(1135, 301)
 scale = Vector2(4.8, 4.8)
 texture = ExtResource("5_c7hn6")
+
+[node name="Spaceman" parent="." instance=ExtResource("4_jayxl")]
+position = Vector2(-142, 202)
+scale = Vector2(0.6, 0.6)
+
+[node name="Keycard" parent="." instance=ExtResource("8_4n1ev")]
+position = Vector2(1180, 430)
+scale = Vector2(2.4375, 2.66667)
+
+[connection signal="body_entered" from="EndDoor/Area2D" to="EndDoor" method="_on_area_2d_body_entered"]
+[connection signal="hidden" from="Keycard" to="EndDoor" method="_on_keycard_hidden"]

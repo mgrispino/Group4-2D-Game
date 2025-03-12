@@ -73,6 +73,8 @@ func _physics_process(delta):
 	move_and_slide()
 	
 
+	
+
 func _ready():
 	var respawn_point = get_node_or_null("../Spawn")
 	if respawn_point:

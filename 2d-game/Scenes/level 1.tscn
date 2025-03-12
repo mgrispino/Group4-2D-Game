@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bxq7ygfpjrmu2"]
+[gd_scene load_steps=20 format=3 uid="uid://bxq7ygfpjrmu2"]
 
 [ext_resource type="Texture2D" uid="uid://c4ctgqovnoofk" path="res://Assets/2D Pixel Spacecraft Tileset/Tileset/tileset.png" id="1_xrhr8"]
 [ext_resource type="Texture2D" uid="uid://c6codkmlbdi0t" path="res://Assets/2D Pixel Spacecraft Tileset/Tileset/Spaceship2.png" id="2_7757f"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ok753pfi8h8" path="res://Scenes/2DCharacter.tscn" id="8_apbva"]
 [ext_resource type="PackedScene" uid="uid://cbgx3r7owqrw2" path="res://Scenes/portal_door.tscn" id="9_n002n"]
 [ext_resource type="Texture2D" uid="uid://27r1kmqiq2ql" path="res://Assets/MenuBackground/Assets/Blue Version/blue-preview.png" id="11_reb4o"]
+[ext_resource type="FontFile" uid="uid://dkqwunfjhx6d7" path="res://Assets/font/monogram.ttf" id="11_sjw0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqqox"]
 texture = ExtResource("1_xrhr8")
@@ -1901,6 +1902,9 @@ sources/3 = SubResource("TileSetAtlasSource_lwh4q")
 sources/4 = SubResource("TileSetAtlasSource_pimrr")
 sources/5 = SubResource("TileSetAtlasSource_lwksg")
 
+[sub_resource type="LabelSettings" id="LabelSettings_4uuoj"]
+font = ExtResource("11_sjw0u")
+
 [node name="Node2D2" type="Node2D"]
 position = Vector2(1, 0)
 
@@ -2031,3 +2035,14 @@ show_behind_parent = true
 position = Vector2(1071, 258)
 scale = Vector2(4, 4)
 texture = ExtResource("11_reb4o")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 80.0
+offset_top = 188.0
+offset_right = 260.0
+offset_bottom = 217.0
+text = "Get to the Control Room
+to get the ship back on Course"
+label_settings = SubResource("LabelSettings_4uuoj")
+horizontal_alignment = 1
